@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel France</title>
     <!-- Include Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -116,13 +115,13 @@
             border-radius: 10px;
         }
 
-        .projects-container {
+        .projects-container, .grid-container-about {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
 
-        .project {
+        .project, .grid-item-about {
             background-color: #f9f9f9;
             border-radius: 10px;
             padding: 20px;
@@ -130,81 +129,76 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .project:hover {
+        .project:hover, .grid-item-about:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .project h3 {
+        .project h3, .grid-item-about h3 {
             font-size: 24px;
             margin-bottom: 10px;
             color: #333;
-        }
-
-        .project p {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        .project a {
-            color: #007bff;
-            text-decoration: none;
             font-weight: bold;
         }
 
-        .project a:hover {
-            text-decoration: underline;
-        }
-
-        /* Styles for the About section */
-        .grid-container-about {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .grid-item-about {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .grid-item-about:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .grid-item-about h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #333;
-            font-weight: bold; /* Ensuring headings stand out */
-        }
-
-        .grid-item-about p {
+        .project p, .grid-item-about p {
             font-size: 16px;
             margin-bottom: 10px;
             color: #555;
-            line-height: 1.5; /* Improved line spacing for readability */
+            line-height: 1.5;
         }
 
-        .grid-item-about ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-bottom: 10px; /* Added space after the skills list for better separation */
-        }
-
-        .grid-item-about ul li {
+        .project a, .grid-item-about ul li {
             color: #007bff;
             text-decoration: none;
-            font-weight: normal; /* Removed bold styling for uniformity */
+            font-weight: normal;
         }
 
-        .grid-item-about ul li:hover {
+        .project a:hover, .grid-item-about ul li:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .navbar a {
+                margin: 5px 0;
+            }
+
+            .project, .grid-item-about {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .container {
+                flex-direction: row;
+            }
+
+            .content {
+                text-align: left;
+            }
+
+            .project, .grid-item-about {
+                width: 95%;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -324,4 +318,5 @@
         // Load the home page by default
         loadContent('home');
     </script>
-</```
+</body>
+</html>
